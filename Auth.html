@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=Rajdhani:wght@400;500;600;700&display=swap');
+    :root{color-scheme:dark;--bg:#0c070a;--panel:#171014;--border:#3d2b22;--red:#a62d57;--pink:#f078a0;--gold:#e5bf70;--cyan:#7ed9df;--text:#f7f0ec;--muted:#b8a7aa;--good:#79dbac;--bad:#ff8799}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0,#381323 0,transparent 42%),radial-gradient(ellipse at 100% 85%,#2d210e 0,transparent 40%),var(--bg);font:16px/1.5 'Rajdhani',Arial,sans-serif;color:var(--text);padding:14px}
+    .shell{max-width:620px;margin:0 auto;border:1px solid #5b4330;border-top:4px double var(--gold);background:linear-gradient(145deg,#191116fa,#0b080a);padding:clamp(18px,4vw,30px);box-shadow:0 20px 60px #0009,inset 0 1px #ffffff08;position:relative;overflow:hidden}
+    .shell:before{content:'';position:absolute;right:-60px;top:80px;width:190px;height:190px;border:1px double #e5bf7020;transform:rotate(45deg);pointer-events:none}.brand{display:flex;align-items:center;gap:12px;margin-bottom:22px;position:relative}.mark{width:48px;height:48px;display:grid;place-items:center;border:1px double var(--gold);box-shadow:inset 0 0 0 4px #0005;font:30px 'Acme',sans-serif;color:var(--gold);background:#080608}.brand strong{display:block;font:17px/1.1 'Acme',sans-serif;letter-spacing:1.7px}.brand small{color:var(--gold);font-size:10px;letter-spacing:1.5px}
+    .eyebrow{font:11px 'Acme',sans-serif;letter-spacing:1.4px;color:var(--gold);text-transform:uppercase}.tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:17px 0 20px}.tabs button{min-height:44px;background:#070609;border:1px double #49342a;color:var(--muted);font:13px 'Acme',sans-serif;letter-spacing:.7px;cursor:pointer;text-transform:uppercase;transition:all .18s}.tabs button:hover{border-color:var(--cyan);color:#fff}.tabs button.active{background:linear-gradient(135deg,#3a2b12,#1c130c);border:2px double var(--gold);color:#ffe6aa;box-shadow:inset 0 -2px var(--gold),0 0 18px #e5bf7012}
+    h1{font:clamp(30px,7vw,39px)/1.05 'Acme',sans-serif;letter-spacing:.4px;margin:10px 0;color:white}h1 span{color:var(--gold)}p{color:var(--muted);margin:8px 0 15px;line-height:1.55}label{display:block;margin:14px 0 6px;color:#eddbe3;font:13px 'Acme',sans-serif;letter-spacing:.5px}input,select{width:100%;min-height:46px;padding:11px 13px;background:#080709;border:1px solid #49313b;color:white;border-radius:0;font:16px 'Rajdhani',sans-serif;outline:none}input:focus{border-color:var(--gold);box-shadow:0 0 0 2px #e5bf7022}input::placeholder{color:#786971}.check{display:flex;gap:11px;align-items:flex-start;margin:15px 0;color:#c1b3b4;font-size:13px;line-height:1.5;background:#0c0a0a;border:1px solid #332722;border-left:3px double var(--gold);padding:12px}.check input{width:18px;min-width:18px;height:18px;min-height:18px;margin:2px 0 0;accent-color:var(--gold)}.primary{width:100%;min-height:50px;margin-top:14px;border:2px double var(--gold);background:linear-gradient(110deg,#4a3513,#21150a 70%,#0a0808);color:#ffe6a9;font:15px 'Acme',sans-serif;letter-spacing:1.1px;cursor:pointer;text-transform:uppercase;box-shadow:inset 0 0 0 1px #000,0 6px 20px #0005;transition:transform .18s,box-shadow .18s}.primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px #e5bf7020}.primary:disabled{opacity:.6;cursor:wait}.msg{min-height:24px;margin:12px 0 0;padding:10px 12px;border-left:3px double #806b77;background:#080609;color:var(--muted);font-size:13px}.msg[data-kind=success]{color:var(--good);border-color:var(--good)}.msg[data-kind=error]{color:var(--bad);border-color:var(--bad)}.privacy{margin-top:16px;border-top:1px double #49372b;padding-top:12px;font-size:12px;color:#9c8d8f}.privacy b{color:var(--gold)}.directory-notice{margin:14px 0 6px;padding:12px 13px;background:#14100b;border:1px solid #4b3a25;border-left:3px double var(--gold);font-size:13px;line-height:1.5;color:#d2c2a1}.directory-notice strong{display:block;font:12px 'Acme',sans-serif;color:var(--gold);letter-spacing:.7px;margin-bottom:4px}.offline{padding:16px;border:1px dashed var(--border);color:var(--muted)}[hidden]{display:none!important}
+    @media(max-width:420px){body{padding:6px}.shell{padding:17px}.brand small{letter-spacing:1px}.tabs button{font-size:11px}}
+
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand"><div class="mark">F+</div><div><strong>FOXCRAK SYSTEM APS</strong><small>CUENTA GLOBAL · COMUNIDAD DEPORTIVA</small></div></div>
+    <div class="eyebrow">Identidad y progreso compartido</div><button type="button" id="cancelAuth" style="float:right;background:#080609;border:1px solid #503041;color:#c5a8b5;padding:7px 10px;cursor:pointer">VOLVER A FOXCRAK ×</button>
+    <h1 id="title">REGÍSTRATE<br><span>Tu perfil te acompaña.</span></h1>
+    <p>Usa nickname y contraseña para acceder a tu perfil desde este dispositivo o desde otro navegador.</p>
+    <div class="tabs"><button type="button" id="tabLogin">INICIAR SESIÓN</button><button type="button" id="tabRegister" class="active">REGÍSTRATE</button></div>
+    <form id="authForm">
+      <label for="nickname">Nickname</label><input id="nickname" name="nickname" minlength="3" maxlength="24" autocomplete="username" required placeholder="Ej. NitzFoxcrak">
+      <div id="passwordWrap"><label for="password">Contraseña</label><input id="password" name="password" type="password" minlength="10" maxlength="128" autocomplete="new-password" required placeholder="Al menos 10 caracteres, letra y número"></div>
+      <div id="confirmWrap"><label for="confirm">Repite la contraseña</label><input id="confirm" name="confirm" type="password" minlength="10" maxlength="128" autocomplete="new-password" required placeholder="Escribe la misma contraseña"></div>
+      <div id="registerFields">
+        <label for="club">CLUB FAVORITO (OPCIONAL)</label><input id="club" name="club" maxlength="80" placeholder="Ej. Regatas Dū Fórnika">
+        <div class="directory-notice"><strong>QUÉ SE MOSTRARÁ EN LA COMUNIDAD</strong>Tu nickname, código de serie, club (si lo indicas), nivel, experiencia y estado aparecerán en el directorio y los rankings de FOXCRAK. Nunca se mostrarán tu contraseña ni los datos de acceso.</div>
+        <label class="check"><input id="acceptRules" type="checkbox" required><span><b>ACEPTO LAS NORMAS DE LA COMUNIDAD Y EL AVISO DE PRIVACIDAD.</b><br>Me comprometo a respetar a otros miembros y entiendo qué datos de mi perfil se muestran públicamente.</span></label>
+      </div>
+      <label class="check"><input id="remember" type="checkbox"><span><b>Mantener sesión en este dispositivo</b><br>Úsalo solo en un equipo personal.</span></label>
+      <button class="primary" id="submit" type="submit">CREAR CUENTA GLOBAL ↗</button>
+      <div class="msg" id="message" role="status" aria-live="polite">Al registrarte se asignará una serie única, como #0000001.</div>
+    </form>
+    <div class="privacy"><b>Privacidad:</b> la contraseña se procesa mediante HTTPS y se convierte en una verificación PBKDF2 con sal antes de guardarse. La hoja nunca almacena la contraseña original. No reutilices contraseñas de otras cuentas.</div>
+  </main>
+<script>
+(function(){
+  'use strict';
+  const $ = id => document.getElementById(id);
+  let mode = 'register';
+  const setMessage = (text,kind='muted') => { $('message').textContent=text; $('message').dataset.kind=kind; };
+  function setMode(next){
+    mode = next === 'login' ? 'login' : 'register';
+    const registering = mode === 'register';
+    $('tabLogin').classList.toggle('active',!registering); $('tabRegister').classList.toggle('active',registering);
+    $('title').innerHTML = registering ? 'REGÍSTRATE<br><span>Tu perfil te acompaña.</span>' : 'BIENVENIDO/A<br><span>Continúa tu progreso.</span>';
+    $('confirmWrap').hidden = !registering; $('registerFields').hidden = !registering;
+    $('confirm').required = registering; $('acceptRules').required = registering; $('club').required = false;
+    $('password').autocomplete = registering ? 'new-password' : 'current-password';
+    $('submit').textContent = registering ? 'CREAR CUENTA GLOBAL  ↗' : 'ENTRAR A FOXCRAK  ↗';
+    setMessage(registering ? 'Se asignará una serie única al crear la cuenta.' : 'Introduce tu nickname y contraseña para continuar.');
+  }
+  $('cancelAuth').addEventListener('click',()=>window.parent.postMessage({type:'FOXCRAK_AUTH_CANCEL'},'*'));
+  $('tabLogin').addEventListener('click',()=>setMode('login'));
+  $('tabRegister').addEventListener('click',()=>setMode('register'));
+  $('authForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const nickname=$('nickname').value.trim(); const password=$('password').value;
+    if(!/^[\p{L}\p{N}][\p{L}\p{N}._ -]{2,23}$/u.test(nickname)){setMessage('El nickname debe tener entre 3 y 24 caracteres válidos.','error');return;}
+    if(password.length<10 || !/[A-Za-z]/.test(password) || !/[0-9]/.test(password)){setMessage('Usa al menos 10 caracteres, con una letra y un número.','error');return;}
+    if(mode==='register' && password!==$('confirm').value){setMessage('Las contraseñas no coinciden.','error');return;}
+    const button=$('submit');button.disabled=true;button.textContent='PROCESANDO…';
+    const failure=err=>{button.disabled=false;setMode(mode);setMessage(err&&err.message?err.message:'No se pudo conectar con el servicio. Comprueba la configuración.','error');};
+    const success=result=>{
+      button.disabled=false;setMode(mode);
+      if(!result || result.ok!==true){setMessage(result&&result.error?result.error:'No se pudo completar la solicitud.','error');return;}
+      const packet={type:'FOXCRAK_AUTH_SUCCESS',token:result.token,profile:result.profile,remember:$('remember').checked};
+      $('password').value='';$('confirm').value='';$('acceptRules').checked=false;
+      setMessage(mode==='register'?'Cuenta creada correctamente. Serie: '+result.profile.serie:'Sesión iniciada. Cargando tu progreso…','success');
+      try{window.parent.postMessage(packet,'*');}catch(_){setMessage('Cuenta creada, pero no se pudo avisar a la página principal.','error');}
+    };
+    if(!window.google||!google.script||!google.script.run){button.disabled=false;setMode(mode);setMessage('Esta página debe abrirse desde la aplicación web publicada de Apps Script.','error');return;}
+    const runner=google.script.run.withSuccessHandler(success).withFailureHandler(failure);
+    if(mode==='register') runner.foxcrakRegisterAccount(nickname,password,$('club').value.trim(),$('acceptRules').checked);
+    else runner.foxcrakLoginAccount(nickname,password);
+  });
+  window.addEventListener('message',function(event){
+    if(event.source!==window.parent)return;
+    const d=event.data||{};
+    if(!d || typeof d.type!=='string') return;
+    if(d.type==='FOXCRAK_SET_AUTH_MODE'){setMode(d.mode);}
+    else if(d.type==='FOXCRAK_VALIDATE_SESSION' && typeof d.token==='string'){
+      google.script.run.withSuccessHandler(result=>window.parent.postMessage({type:'FOXCRAK_SESSION_RESULT',result:result,token:d.token},'*'))
+        .withFailureHandler(()=>window.parent.postMessage({type:'FOXCRAK_SESSION_RESULT',result:{ok:false,error:'No se pudo validar la sesión.'}},'*')).foxcrakValidateSession(d.token);
+    } else if(d.type==='FOXCRAK_SAVE_PROGRESS' && typeof d.token==='string'){
+      google.script.run.withSuccessHandler(result=>window.parent.postMessage({type:'FOXCRAK_PROGRESS_RESULT',result:result},'*'))
+        .withFailureHandler(()=>window.parent.postMessage({type:'FOXCRAK_PROGRESS_RESULT',result:{ok:false}},'*')).foxcrakSaveProgress(d.token,d.progress||{});
+    } else if(d.type==='FOXCRAK_HEARTBEAT' && typeof d.token==='string'){
+      google.script.run.foxcrakHeartbeat(d.token);
+    } else if(d.type==='FOXCRAK_LOGOUT' && typeof d.token==='string'){
+      google.script.run.withSuccessHandler(result=>window.parent.postMessage({type:'FOXCRAK_LOGOUT_RESULT',result:result},'*'))
+        .withFailureHandler(()=>window.parent.postMessage({type:'FOXCRAK_LOGOUT_RESULT',result:{ok:false}},'*')).foxcrakLogout(d.token,d.progress||{});
+    }
+  });
+  try{window.parent.postMessage({type:'FOXCRAK_AUTH_READY'},'*');}catch(_){}
+  setMode('register');
+})();
+</script>
+</body>
+</html>
